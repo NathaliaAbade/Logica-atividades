@@ -1,0 +1,39 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2*3.14);
+        pincel.fill();
+    }
+
+   /* desenhaCirculo(300, 200, 13, 'red');
+    desenhaCirculo(274, 200, 13, ' orange');
+    desenhaCirculo(326, 200, 13, 'black');
+    desenhaCirculo(300, 174, 13, 'yellow');
+    desenhaCirculo(300, 226, 13, 'blue');
+    */
+
+    function desenhaFlor(x, y) {
+    desenhaCirculo(x, y, 13, 'red');
+    desenhaCirculo(x - 26, y, 13, ' orange');
+    desenhaCirculo(x + 26, y, 13, 'black');
+    desenhaCirculo(x, y - 26, 13, 'yellow');
+    desenhaCirculo(x, y + 26, 13, 'blue');
+    }
+
+    desenhaFlor(300, 200);
+    desenhaFlor(200, 300);
+    desenhaFlor(200, 100);
+    desenhaFlor(100, 200);
+    
+</script>
